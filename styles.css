@@ -1,0 +1,149 @@
+:root {
+  --pink: #ffd1dc;
+  --rose: #ff6b81;
+  --red: #ff3b5c;
+  --bg: #fff4f7;
+  --text: #fbe9ef;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(47, 14, 28, 0.85), rgba(47, 14, 28, 0.85)),
+    url("WhatsApp%20Image%202026-02-07%20at%2022.25.35.jpeg") center / cover
+      no-repeat;
+  background-blend-mode: multiply;
+  color: var(--text);
+  font-family: "Georgia", "Times New Roman", serif;
+  overflow: hidden;
+}
+
+.card {
+  text-align: center;
+  padding: 40px 32px;
+  border-radius: 24px;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  width: min(92vw, 520px);
+}
+
+h1 {
+  margin: 0 0 18px;
+  font-size: clamp(26px, 4vw, 38px);
+}
+
+.subtitle {
+  margin-bottom: 20px;
+  font-size: clamp(14px, 2.3vw, 18px);
+  opacity: 0.8;
+  font-family: "Trebuchet MS", "Lucida Sans", Arial, sans-serif;
+}
+
+.buttons {
+  position: relative;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+button {
+  border: none;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+#yesBtn {
+  background: linear-gradient(135deg, var(--rose), var(--red));
+  color: #ffffff;
+  box-shadow: 0 12px 24px rgba(255, 59, 92, 0.35);
+}
+
+#yesBtn:hover {
+  transform: translateY(-2px);
+}
+
+#noBtn {
+  position: fixed;
+  left: 60%;
+  top: 60%;
+  background: #1b0b12;
+  color: var(--text);
+  border: 2px solid var(--rose);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+}
+
+#message {
+  margin-top: 16px;
+  font-weight: 600;
+  min-height: 24px;
+  font-family: "Trebuchet MS", "Lucida Sans", Arial, sans-serif;
+}
+
+#success {
+  display: none;
+  margin-top: 18px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ff9ab0;
+}
+
+#fireworks {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  display: none;
+}
+
+#finalScreen {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  z-index: 6;
+  color: #fff7fa;
+  text-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+}
+
+#finalScreen h1 {
+  font-size: clamp(36px, 6vw, 64px);
+  margin: 0 0 10px;
+}
+
+#finalScreen p {
+  font-size: clamp(16px, 3vw, 22px);
+  margin: 0;
+}
+
+.confetti {
+  position: fixed;
+  top: -10px;
+  font-size: 18px;
+  animation: fall 2.8s linear forwards;
+  pointer-events: none;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
